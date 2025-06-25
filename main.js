@@ -12,7 +12,6 @@ for (let i = 0; i < gridLength ** 2; i++) {
 let items = document.querySelectorAll(".item");
 items.forEach((item) => {
   item.addEventListener("mouseover", () => {
-    // item.setAttribute("backgroundColor", "green");
     let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
     item.style["background-color"] = randomColor;
   });
@@ -44,7 +43,8 @@ btn.addEventListener("click", () => {
   items.forEach((item) => {
     item.addEventListener("mouseover", () => {
       // item.setAttribute("backgroundColor", "green");
-      item.style["background-color"] = "green";
+      randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+      item.style["background-color"] = randomColor;
     });
   });
 });
