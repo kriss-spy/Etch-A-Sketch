@@ -1,4 +1,6 @@
 let gridLength = 4;
+const root = document.documentElement;
+root.style.setProperty("--gridLength", gridLength);
 
 const grid = document.querySelector("#grid");
 for (let i = 0; i < gridLength ** 2; i++) {
@@ -22,7 +24,9 @@ btn.addEventListener("click", () => {
   sizeInput.value = "";
   if (gridLength > 100) {
     alert("grid size maximum exceeded");
+    return;
   }
+  root.style.setProperty("--gridLength", gridLength);
   grid.textContent = "";
   for (let i = 0; i < gridLength ** 2; i++) {
     let item = document.createElement("div");

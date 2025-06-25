@@ -1,5 +1,6 @@
 :root {
-    --gridLength: 16;
+    --gridLength: 4;
+    --gridWidth: 600px;
 }
 
 * {
@@ -45,14 +46,18 @@ body {
 #grid {
     display: flex;
     justify-content: center;
+    align-items: stretch;
     flex-wrap: wrap;
-    width: 400px;
-    max-width: 400px;
+    width: var(--gridWidth);
+    max-width: var(--gridWidth);
+    height: var(--gridWidth);
+    max-height: var(--gridWidth);
     gap: 2px;
 }
 .item {
-    flex: 1 1 calc(25% - 2px);
-    height: 80px;
+    flex: 1 1 calc(var(--gridWidth)/var(--gridLength) - 2px);
+
+    /* height: 80px; */
     background-color: aliceblue;
     display: flex;
     align-items: center;
