@@ -1,7 +1,7 @@
-let gridSize = 16;
+let gridLength = 4;
 
 const grid = document.querySelector("#grid");
-for (let i = 0; i < gridSize; i++) {
+for (let i = 0; i < gridLength ** 2; i++) {
   let item = document.createElement("div");
   item.classList.add("item");
   grid.appendChild(item);
@@ -18,9 +18,13 @@ items.forEach((item) => {
 const sizeInput = document.querySelector("#size-input");
 const btn = document.querySelector("#submit-btn");
 btn.addEventListener("click", () => {
-  gridSize = sizeInput.value;
+  gridLength = sizeInput.value;
+  sizeInput.value = "";
+  if (gridLength > 100) {
+    alert("grid size maximum exceeded");
+  }
   grid.textContent = "";
-  for (let i = 0; i < gridSize; i++) {
+  for (let i = 0; i < gridLength ** 2; i++) {
     let item = document.createElement("div");
     item.classList.add("item");
     grid.appendChild(item);
