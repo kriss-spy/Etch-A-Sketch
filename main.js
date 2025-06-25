@@ -22,7 +22,13 @@ const btn = document.querySelector("#submit-btn");
 btn.addEventListener("click", () => {
   gridLength = sizeInput.value;
   sizeInput.value = "";
-  if (gridLength > 100) {
+  if (!gridLength || gridLength != +gridLength) {
+    alert("grid size bad input");
+    return;
+  } else if (gridLength <= 0) {
+    alert("grid size must be positive integer");
+    return;
+  } else if (gridLength > 100) {
     alert("grid size maximum exceeded");
     return;
   }

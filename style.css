@@ -1,6 +1,7 @@
 :root {
     --gridLength: 4;
     --gridWidth: 600px;
+    --gridGap: 1px;
 }
 
 * {
@@ -52,7 +53,7 @@ body {
     max-width: var(--gridWidth);
     height: var(--gridWidth);
     max-height: var(--gridWidth);
-    gap: 2px;
+    gap: var(--gridGap);
 }
 .item {
     flex: 1 1 calc(var(--gridWidth)/var(--gridLength) - 2px);
